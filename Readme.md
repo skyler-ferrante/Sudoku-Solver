@@ -1,6 +1,7 @@
 # Sudoku Solver
 A simple sudoku solver in C
-This is a naive solution, and is therefore horribly inefficient
+
+This is a naive solution, and is therefore horribly inefficient.
 
 To compile
 
