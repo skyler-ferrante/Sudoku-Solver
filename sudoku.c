@@ -134,7 +134,6 @@ bool check_grid(int puzzle[9][9], int row_index, int column_index)
 	return true;
 }
 
-//Check a given puzzle
 /**
  * Check a given puzzle
  * checks rows, columns, and grids
