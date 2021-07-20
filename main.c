@@ -45,7 +45,12 @@ int main()
 
 		double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
 		printf("Time spent: %f\n", time_spent);
-		printf("CHECK: %s\n\n", check_sudoku(puzzle) ? "PASS" : "FAIL");
+		
+		if(!check_sudoku(puzzle))
+		{
+			printf("CHECK: FAILED\n");
+			return -1;
+		}
 	}
 
 	clock_t end_of_program = clock();
