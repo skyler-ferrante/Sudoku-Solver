@@ -171,7 +171,7 @@ bool check_sudoku(int puzzle[9][9])
  * 
  * puzzle: puzzle to check if any unfilled spots
 **/
-bool is_filled(int puzzle[9][9])
+bool check_filled(int puzzle[9][9])
 {
 	for (int i = 0; i < 9; i++)
 		for (int j = 0; j < 9; j++)
