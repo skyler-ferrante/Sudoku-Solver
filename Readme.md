@@ -5,11 +5,11 @@ This is a naive solution, and is therefore horribly inefficient.
 
 To compile
 
-    $ gcc sudoku.c main.c
+    gcc sudoku.c main.c
 
 Or to compile with optimization
 
-    $ gcc sudoku.c main.c -O3
+    gcc sudoku.c main.c -O3
 
 By default, it will open the file 17_clue_puzzles.txt
 
