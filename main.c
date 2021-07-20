@@ -11,19 +11,9 @@
 **/
 int main()
 {
-	FILE *file;
-	file = fopen("17_clue_puzzles.txt", "r");
-	if (file == NULL)
-	{
-		printf("File can't be opened");
-		return -1;
-	}
+	FILE *file = fopen("17_clue_puzzles.txt", "r");
+	int number_of_puzzles = check_file(file);
 
-	int number_of_puzzles;
-	if (!fscanf(file, "%d", &number_of_puzzles))
-	{
-		return -1;
-	}
 	printf("Solving %d number of puzzles\n", number_of_puzzles);
 	
 	int puzzle[9][9];

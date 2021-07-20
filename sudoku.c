@@ -1,4 +1,5 @@
 #include <time.h>
+#include <stdio.h>
 
 #include "sudoku.h"
 
@@ -12,6 +13,27 @@
  * 	The puzzles grids contain unique digits (1-9)
  * 	The puzzles rows and columns contain unique digits (1-9)
 **/
+
+/**
+ * Check sudoku list, and get amount of puzzles
+ * 
+ * FILE: file to check
+ * return: amount of sudoku puzzles in file, given by first entry
+**/
+int check_file(FILE *file){
+	if (file == NULL)
+	{
+		printf("File can't be opened");
+		return -1;
+	}
+
+	int number_of_puzzles;
+	if (!fscanf(file, "%d", &number_of_puzzles))
+	{
+		return -1;
+	}
+	return number_of_puzzles;
+}
 
 /**
  * Get a single puzzle
@@ -195,6 +217,40 @@ void copy_puzzle(int puzzle1[9][9], int puzzle2[9][9])
 			puzzle2[i][j] = puzzle1[i][j];
 		}
 	}
+}
+
+/**
+ * Get amount of numbers in row
+ * 
+ * puzzle: puzzle to use
+ * row_index: row to use
+ * return: amount of unfilled points in given row from puzzle
+**/
+int get_amount_unfilled_in_row(int puzzle[9][9], int row_index){
+	int count = 0;
+	for(int i = 0; i < 9; i++){
+		if(puzzle[row_index][i] == 0){
+			count++;
+		}
+	}
+	return count;
+}
+
+/**
+ * Get amount of numbers in col
+ * 
+ * puzzle: puzzle to use
+ * col_index: col to use
+ * return: amount of unfilled points in col
+**/
+int get_amount_unfilled_in_col(int puzzle[9][9], int col_index){
+	int count = 0;
+	for(int i = 0; i<9; i++){
+		if(puzzle[i][col_index] == 0){
+			count++;
+		}
+	}
+	return count;
 }
 
 /**
