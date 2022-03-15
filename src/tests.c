@@ -5,7 +5,52 @@
 
 void print_time(clock_t start, clock_t end);
 
+void test_check_row();
+void test_check_column();
+void test_solvers();
+
 int main(){
+	test_check_row();
+	test_check_column();
+	test_solvers();
+}
+
+void test_check_row(){
+	printf("Running check_row\n");
+
+	int puzzle[9][9] = {
+		{0,0,0,0,0,0,0,0,0},
+		{2,1,3,4,6,5,7,8,9},
+		{2,2,3,4,6,5,7,8,9},
+	};
+
+	assert( check_row(puzzle, 0) );
+	assert( check_row(puzzle, 1) );
+	assert( ! check_row(puzzle, 2) );
+}
+
+void test_check_column(){
+	printf("Running check_column\n");
+
+	int puzzle[9][9] = {
+		{1,8,1,0},
+		{2,1,4,0},
+		{3,2,3,0},
+		{4,2,2,0},
+		{5,4,7,0},
+		{6,5,5,0},
+		{7,6,6,0},
+		{8,7,9,0},
+		{9,3,8,0},
+	};
+
+	assert( check_column(puzzle, 0) );
+	assert( ! check_column(puzzle, 1) );
+	assert( check_column(puzzle, 2) );
+	assert( check_column(puzzle, 3) );
+}
+
+void test_solvers(){
 	int puzzle[9][9] = {
 		{0,0,0,0,0,0,0,1,0,},
 		{4,0,0,0,0,0,0,0,0,},
