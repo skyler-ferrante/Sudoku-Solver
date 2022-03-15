@@ -291,7 +291,6 @@ void get_col_nums(int puzzle[9][9], bool nums[9], int col_index)
 	}
 }
 
-//Get numbers in grid
 /**
  * Get numbers in grid
  * 
